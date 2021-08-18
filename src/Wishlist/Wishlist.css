@@ -1,0 +1,40 @@
+@font-face {
+  font-family: minunFontti;
+  src: url("../helsinki.ttf");
+}
+
+body, html {
+    margin: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    width: 70%;
+    height: 70%;
+    background: rgb(0,236,255);
+    background: linear-gradient(47deg, rgba(0,236,255,1) 0%, rgba(178,9,255,1) 100%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    text-align: center;
+  }
+  
+span { margin: 2px; }
+
+
+.vasen_puoli, .oikea_puoli {
+  padding: 5px;
+  background: rgb(255, 255, 255);
+  border-radius: 20px;
+  opacity: 0.9;
+  border: 5px solid black;
+}
+
+.oikea_puoli {
+  height: 460px;
+  overflow: auto;
+}
+
+.headeri {
+  font-size: 48px;
+  font-family: minunFontti;
+}
+  
+  

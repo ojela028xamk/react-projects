@@ -79,9 +79,12 @@ function Wishlist(props) {
   });
   
   return (
-    <div className="App">
+    <div className="Wishlist">
 
-      <button onClick={props.onClick}>Palaa etusivulle</button>
+      <br />
+
+      <Button variant="outlined" type="submit" onClick={props.onClick}> {"<<"} Palaa etusivulle</Button>
+
       <h1 className="headeri">Videogame Wishlist</h1>
       
       <Grid container spacing={3}>

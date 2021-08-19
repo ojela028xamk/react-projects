@@ -4,18 +4,21 @@
 }
 
 body, html {
-    margin: auto;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    width: 70%;
-    height: 70%;
-    background: rgb(0,236,255);
-    background: linear-gradient(47deg, rgba(0,236,255,1) 0%, rgba(178,9,255,1) 100%);
+    /*background: rgb(0,236,255);
+    background: linear-gradient(47deg, rgba(0,236,255,1) 0%, rgba(178,9,255,1) 100%);*/
     background-repeat: no-repeat;
     background-attachment: fixed;
     text-align: center;
   }
-  
+
+.Wishlist {
+  margin: auto;
+  width: 50%;
+  height: 70%;
+}
+
 span { margin: 2px; }
 
 

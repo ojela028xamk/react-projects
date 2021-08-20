@@ -23,21 +23,19 @@ const handleEtusivu = function() {
         display: sivu === "App" ? "block" : "none"
         }} >
 
-        <h1 style={{ fontSize: "50px" }}>ReactJS Ohjelmia</h1>
-
       </div>
       
       <div className="index" style={{ display: sivu === "App" ? "flex" : "none" }}>
 
           <div className="kortti">
             <div className="korttiKuva">
-              {LocalHospitalIcon}
+              <LocalHospitalIcon style={{ 
+                width: "150px",
+                height: "150px" }} />
             </div> 
             <div className="korttiTeksti">
               <h2>Rokotedataa</h2>
-              <p>Ohjelma, jonka avulla voidaan lisätä ja poistaa videopelejä toivelistalta.
-
-              </p>
+              <p>Solita Dev Akatemian työnhakutehtävä, joka näyttää rokotedataa. </p>
               <Button onClick={(e) => {
                 e.preventDefault(); 
                 window.location.href='https://lansipii-vaccine-data.firebaseapp.com/';

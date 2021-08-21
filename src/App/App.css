@@ -12,18 +12,18 @@
     background-color: rgb(238, 238, 238);
     padding: 20px;
     border-radius: 20px;
-
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 25px;
+    column-gap: 25px;
 }
 
 .kortti {
     display: flex;
-    flex: 1;
-    width: 50%;
     border-radius: 20px;
     background-color: white;
     padding: 20px;
     box-shadow: 7px 7px 15px black;
-    margin: 20px;
 }
 
 .korttiKuva {

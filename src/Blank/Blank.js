@@ -1,5 +1,5 @@
 import React from 'react';
-
+import Button from '@material-ui/core/Button';
 
 
 function Blank(props) {
@@ -8,10 +8,12 @@ function Blank(props) {
 
     <div>
 
-      <h1>Blank</h1>
+      <br />
 
-      <button onClick={props.onClick}>Palaa etusivulle</button>
+      <Button color="primary" variant="outlined" onClick={props.onClick}>{"<<"} Palaa etusivulle</Button>
      
+      
+    
     </div>
   );
   

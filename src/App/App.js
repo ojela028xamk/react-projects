@@ -25,7 +25,7 @@ const handleEtusivu = function() {
 
       </div>
       
-      <div className="index" style={{ display: sivu === "App" ? "flex" : "none" }}>
+      <div className="index" style={{ display: sivu === "App" ? "grid" : "none" }}>
 
           <div className="kortti">
             <div className="korttiKuva">
@@ -55,8 +55,18 @@ const handleEtusivu = function() {
               <Button variant="outlined" color="primary" onClick={() => asetaSivu("Wishlist")}> Avaa {">>"} </Button>
             </div>
           </div>
-          
 
+          <div className="kortti">
+            <div className="korttiKuva">
+              <img className="logo" src={logo1} />
+            </div> 
+            <div className="korttiTeksti">
+              <h2>Blank</h2>
+              <p>Blank.</p>
+              <Button variant="outlined" color="primary" onClick={() => asetaSivu("Blank")}> Avaa {">>"} </Button>
+            </div>
+          </div>
+          
       </div>
 
       <div>

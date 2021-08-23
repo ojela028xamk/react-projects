@@ -12,6 +12,7 @@ function Blank(props) {
 
       <Button color="primary" variant="outlined" onClick={props.onClick}>{"<<"} Palaa etusivulle</Button>
      
+      <h1>Budget Calculator</h1>
       
     
     </div>

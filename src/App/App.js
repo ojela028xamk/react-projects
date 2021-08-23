@@ -61,9 +61,9 @@ const handleEtusivu = function() {
               <img className="logo" src={logo1} />
             </div> 
             <div className="korttiTeksti">
-              <h2>Blank</h2>
-              <p>Blank.</p>
-              <Button variant="outlined" color="primary" onClick={() => asetaSivu("Blank")}> Avaa {">>"} </Button>
+              <h2>Budjettilaskuri</h2>
+              <p>Budjettilaskuri.</p>
+              <Button variant="outlined" color="primary" onClick={() => asetaSivu("Budget")}> Avaa {">>"} </Button>
             </div>
           </div>
           
@@ -71,7 +71,7 @@ const handleEtusivu = function() {
 
       <div>
         {sivu === "Wishlist" && <Wishlist onClick={handleEtusivu}/>}
-        {sivu === "Blank" && <Blank onClick={handleEtusivu}/>}
+        {sivu === "Budget" && <Blank onClick={handleEtusivu}/>}
       </div>
 
     </>

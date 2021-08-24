@@ -1,7 +1,7 @@
 import './App.css';
 import React from 'react';
 import Wishlist from "../Wishlist/Wishlist";
-import Blank from "../Blank/Blank";
+import Budget from "../Budget/Budget";
 import logo1 from './logo1.png';
 import ylabanneri from './banneri-01.png';
 import Button from '@material-ui/core/Button';
@@ -71,7 +71,7 @@ const handleEtusivu = function() {
 
       <div>
         {sivu === "Wishlist" && <Wishlist onClick={handleEtusivu}/>}
-        {sivu === "Budget" && <Blank onClick={handleEtusivu}/>}
+        {sivu === "Budget" && <Budget onClick={handleEtusivu}/>}
       </div>
 
     </>

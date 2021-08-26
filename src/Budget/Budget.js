@@ -48,7 +48,7 @@ const Budjetti = () => {
 
   return (
 		<div>
-			<h3>Budget: {budget}</h3>
+			<h3>Budget: {budget} €</h3>
 		</div>
 	);
 
@@ -65,7 +65,7 @@ const Jaljella = () => {
 
 	return (
 		<div>
-			<span>Remaining: £{budget - totalExpenses}</span>
+			<span>Remaining: {budget - totalExpenses} €</span>
 		</div>
 	);
 
@@ -81,7 +81,7 @@ const Kulut = () => {
 
 	return (
 		<div>
-			<span>Spent so far: {totalExpenses} € </span>
+			<span>Spent so far: {totalExpenses} €</span>
 		</div>
 	);
 

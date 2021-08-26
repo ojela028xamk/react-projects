@@ -1,12 +1,18 @@
 import React from 'react';
 
-/* AppContextin avulla komponentit käyttävät statea
-	https://reactjs.org/docs/context.html
+/* 
+AppContextin avulla komponentit käyttävät statea
+https://reactjs.org/docs/context.html
 */
 
 // AppReducer luo uuden globaalin state objektin
 const AppReducer = (state, action) => {
 	switch (action.type) {
+		case 'ADD_BUDGET':
+			return {
+				...state,
+				budget: action.payexp,
+			};
 		case 'ADD_EXPENSE':
 			return {
 				...state,
@@ -31,7 +37,7 @@ Voidaan jättää tyhjät stringit, arrayt jne.
 */
 
 const initialState = {
-	budget: 2000,
+	budget: 0,
 	expenses: [],
 };
 

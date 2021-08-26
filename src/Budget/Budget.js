@@ -35,11 +35,41 @@ function Budget(props) {
       <KulutLista />
       
       <LisaaKulu />
+
+      <LisaaBudjetti />
     
     </div>
     </AppProvider>
   );
   
+}
+
+const LisaaBudjetti = () => {
+
+  const { dispatch } = useContext(AppContext);
+
+  const [raha, setRaha] = React.useState('');
+
+  const onSubmit = (e) => {
+
+    e.preventDefault();
+
+    dispatch({
+      type: 'ADD_BUDGET',
+      payexp: raha,
+    });
+
+  }
+
+  return (
+    <form onSubmit={onSubmit}>
+      <label>Add budget item</label>
+      <input required='required' type="text" id='raha' value={raha} onChange={(e) => setRaha(e.target.value)}></input>
+      <br />
+        <button type="submit">Add budget</button>
+    </form>
+  );
+
 }
 
 const Budjetti = () => {
@@ -62,7 +92,6 @@ const Jaljella = () => {
 		return (total = total + item.cost);
 	}, 0);
 
-
 	return (
 		<div>
 			<span>Remaining: {budget - totalExpenses} €</span>
@@ -81,7 +110,7 @@ const Kulut = () => {
 
 	return (
 		<div>
-			<span>Spent so far: {totalExpenses} €</span>
+			<span>Money spent: {totalExpenses} €</span>
 		</div>
 	);
 
@@ -102,6 +131,7 @@ const KulutLista = () => {
 }
 
 const KulutItem = (props) => {
+
   const { dispatch } = useContext(AppContext);
 
 	const handleDeleteExpense = () => {
@@ -122,6 +152,7 @@ const KulutItem = (props) => {
 			</div>
 		</li>
 	);
+
 }
 
 const LisaaKulu = () => {

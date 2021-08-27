@@ -3,3 +3,12 @@
     width: 720px;
 }
 
+.kulut {
+    display: flex;
+}
+
+.kulutlista, .lisaakulu {
+    flex: 1;
+    border: 2px solid black;
+    padding: 20px;
+}

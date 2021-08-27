@@ -31,13 +31,20 @@ function Budget(props) {
       <Alert icon={false} variant="filled" severity="error">
         <Kulut />
       </Alert>
+      <br />
+      <div className="kulut">
+        
+        <div className="lisaakulu">
+          <LisaaKulu />
+          <LisaaBudjetti />
+        </div>
 
-      <KulutLista />
-      
-      <LisaaKulu />
+        <div className="kulutlista">
+          <KulutLista />
+        </div>
+        
+      </div>
 
-      <LisaaBudjetti />
-    
     </div>
     </AppProvider>
   );

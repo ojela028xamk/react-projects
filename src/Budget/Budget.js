@@ -1,10 +1,12 @@
 import './Budget.css';
 import React, { useContext } from 'react';
 import Button from '@material-ui/core/Button';
-import Alert from '@material-ui/lab/Alert';
 import { AppProvider } from './Context/AppContext';
 import { AppContext } from './Context/AppContext';
 import { v4 as uuidv4 } from 'uuid';
+import AccountBalanceIcon from '@material-ui/icons/AccountBalance';
+import AttachMoneyIcon from '@material-ui/icons/AttachMoney';
+import MoneyOffIcon from '@material-ui/icons/MoneyOff';
 
 
 function Budget(props) {
@@ -20,17 +22,17 @@ function Budget(props) {
       <h1>Budget Calculator</h1>
       
 
-      <Alert icon={false} variant="filled" severity="success">
+      <div className="info">
         <Budjetti />
-      </Alert>
+      </div>
         
-      <Alert icon={false} variant="filled" severity="warning">
+      <div className="info">
         <Jaljella />
-      </Alert>
+      </div>
       
-      <Alert icon={false} variant="filled" severity="error">
+      <div className="info">
         <Kulut />
-      </Alert>
+      </div>
       <br />
       <div className="kulut">
         
@@ -85,7 +87,7 @@ const Budjetti = () => {
 
   return (
 		<div>
-			<h3>Budget: {budget} €</h3>
+			<span><AccountBalanceIcon /> Budget: {budget} €</span>
 		</div>
 	);
 
@@ -101,7 +103,7 @@ const Jaljella = () => {
 
 	return (
 		<div>
-			<span>Remaining: {budget - totalExpenses} €</span>
+			<span><AttachMoneyIcon />Remaining: {budget - totalExpenses} €</span>
 		</div>
 	);
 
@@ -117,7 +119,7 @@ const Kulut = () => {
 
 	return (
 		<div>
-			<span>Money spent: {totalExpenses} €</span>
+			<span><MoneyOffIcon />Money spent: {totalExpenses} €</span>
 		</div>
 	);
 

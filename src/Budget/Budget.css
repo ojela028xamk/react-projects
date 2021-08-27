@@ -12,3 +12,11 @@
     border: 2px solid black;
     padding: 20px;
 }
+
+.info {
+    border-radius: 10px;
+    box-shadow: inset;
+    box-shadow: 2px 2px 10px black;
+    padding: 20px;
+    margin: 20px;
+}

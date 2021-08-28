@@ -7,7 +7,14 @@ import { v4 as uuidv4 } from 'uuid';
 import AccountBalanceIcon from '@material-ui/icons/AccountBalance';
 import AttachMoneyIcon from '@material-ui/icons/AttachMoney';
 import MoneyOffIcon from '@material-ui/icons/MoneyOff';
+import { makeStyles } from '@material-ui/core/styles';
 
+const useStyles = makeStyles({
+  root: {
+    color: 'white',
+    borderColor: 'white',
+  },
+});
 
 function Budget(props) {
 
@@ -17,31 +24,44 @@ function Budget(props) {
 
       <br />
 
-      <Button color="primary" variant="outlined" onClick={props.onClick}>{"<<"} Palaa etusivulle</Button>
+      <Button variant="outlined" type="submit" onClick={props.onClick}> {"<<"} Palaa etusivulle</Button>
      
-      <h1>Budget Calculator</h1>
+      <h1 className="budget_header">BUDGET CALCULATOR</h1>
       
+      <div className="ylaosa">
 
-      <div className="info">
-        <Budjetti />
+          <div className="ylaosa_vasen">
+            <LisaaBudjetti />
+          </div>
+
+          <div className="ylaosa_oikea">
+
+            <div className="info">
+              <Budjetti />
+            </div>
+              
+            <div className="info">
+              <Jaljella />
+            </div>
+            
+            <div className="info">
+              <Kulut />
+            </div>
+
+          </div>
+          
       </div>
-        
-      <div className="info">
-        <Jaljella />
-      </div>
-      
-      <div className="info">
-        <Kulut />
-      </div>
+
       <br />
+
       <div className="kulut">
         
         <div className="lisaakulu">
-          <LisaaKulu />
-          <LisaaBudjetti />
+          <LisaaKulu />        
         </div>
 
         <div className="kulutlista">
+          <h1>Expenses</h1>
           <KulutLista />
         </div>
         
@@ -54,6 +74,8 @@ function Budget(props) {
 }
 
 const LisaaBudjetti = () => {
+
+  const classes = useStyles();
 
   const { dispatch } = useContext(AppContext);
 
@@ -72,10 +94,11 @@ const LisaaBudjetti = () => {
 
   return (
     <form onSubmit={onSubmit}>
-      <label>Add budget item</label>
+      <h1>Add budget</h1>
       <input required='required' type="text" id='raha' value={raha} onChange={(e) => setRaha(e.target.value)}></input>
       <br />
-        <button type="submit">Add budget</button>
+      <br />
+      <Button classes={{root: classes.root}} variant="outlined" type="submit">Add budget</Button>
     </form>
   );
 
@@ -166,6 +189,7 @@ const KulutItem = (props) => {
 
 const LisaaKulu = () => {
 
+  const classes = useStyles();
   const { dispatch } = useContext(AppContext);
 
   const [nimi, setNimi] = React.useState('');
@@ -193,13 +217,17 @@ const LisaaKulu = () => {
       <h1>Add expense</h1>
       <form onSubmit={onSubmit}>
 
-        <label>Name: </label>
-        <input required='required' type="text" id='name' value={nimi} onChange={(e) => setNimi(e.target.value)}></input>
+        <label>Item</label>
         <br />
-        <label>Cost: </label>
-        <input required='required' type="text" id='cost' value={kulu} onChange={(e) => setKulu(e.target.value)}></input>
+        <input required='required' type="text" id='name' value={nimi} onChange={(e) => setNimi(e.target.value)} />
         <br />
-        <button type="submit">Add expense</button>
+        <br />
+        <label>Cost (€)</label>
+        <br />
+        <input required='required' type="text" id='cost' value={kulu} onChange={(e) => setKulu(e.target.value)} />
+        <br />
+        <br />
+        <Button classes={{root: classes.root}} variant="outlined" type="submit">Add expense</Button>
 
       </form>
     </>

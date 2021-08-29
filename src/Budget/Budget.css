@@ -52,6 +52,8 @@ body {
     background-color: white;
     border-left: 7px solid #585858;
     border-right: 7px solid #585858;
+    text-align: left;
+    font-size: 24px;
 }
 
 .budget_header {

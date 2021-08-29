@@ -110,7 +110,7 @@ const Budjetti = () => {
 
   return (
 		<div>
-			<span><AccountBalanceIcon /> Budget: {budget} €</span>
+			<span><AccountBalanceIcon style={{fontSize: '36px', marginBottom: '-5px'}} /> Budget: {budget} €</span>
 		</div>
 	);
 
@@ -126,7 +126,7 @@ const Jaljella = () => {
 
 	return (
 		<div>
-			<span><AttachMoneyIcon />Remaining: {budget - totalExpenses} €</span>
+			<span><AttachMoneyIcon style={{marginBottom: '-3px'}}/>Remaining: {budget - totalExpenses} €</span>
 		</div>
 	);
 
@@ -142,7 +142,7 @@ const Kulut = () => {
 
 	return (
 		<div>
-			<span><MoneyOffIcon />Money spent: {totalExpenses} €</span>
+			<span><MoneyOffIcon style={{marginBottom: '-3px'}}/>Money spent: {totalExpenses} €</span>
 		</div>
 	);
 

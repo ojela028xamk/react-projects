@@ -8,6 +8,7 @@ import AccountBalanceIcon from '@material-ui/icons/AccountBalance';
 import AttachMoneyIcon from '@material-ui/icons/AttachMoney';
 import MoneyOffIcon from '@material-ui/icons/MoneyOff';
 import { makeStyles } from '@material-ui/core/styles';
+import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
 
 const useStyles = makeStyles({
   root: {
@@ -110,7 +111,7 @@ const Budjetti = () => {
 
   return (
 		<div>
-			<span><AccountBalanceIcon style={{fontSize: '36px', marginBottom: '-5px'}} /> Budget: {budget} €</span>
+			<span style={{fontSize: '28px'}}><AccountBalanceIcon style={{fontSize: '28px', marginBottom: '-5px'}} /> <b>Budget <br/> {budget} €</b></span>
 		</div>
 	);
 
@@ -126,7 +127,7 @@ const Jaljella = () => {
 
 	return (
 		<div>
-			<span><AttachMoneyIcon style={{marginBottom: '-3px'}}/>Remaining: {budget - totalExpenses} €</span>
+			<span style={{fontSize: '20px'}}><AttachMoneyIcon style={{marginBottom: '-5px'}}/> Remaining <br/> {budget - totalExpenses} €</span>
 		</div>
 	);
 
@@ -142,7 +143,7 @@ const Kulut = () => {
 
 	return (
 		<div>
-			<span><MoneyOffIcon style={{marginBottom: '-3px'}}/>Money spent: {totalExpenses} €</span>
+			<span style={{fontSize: '20px'}}><MoneyOffIcon style={{marginBottom: '-5px'}}/> Money spent <br/> {totalExpenses} €</span>
 		</div>
 	);
 
@@ -175,13 +176,10 @@ const KulutItem = (props) => {
 
 	return (
 		<li>
-			{props.name}
-			<div>
-				<span>
-					{props.cost} €
-				</span>
-				<button onClick={handleDeleteExpense}>Delete</button>
-			</div>
+      <span style={{fontSize: '22px'}}> {props.name} {props.cost} € </span>
+      <Button type="button" onClick={handleDeleteExpense} size="medium">
+        <DeleteForeverIcon style={{marginBottom: '5px'}}/>
+      </Button>
 		</li>
 	);
 

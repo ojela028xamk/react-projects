@@ -11,7 +11,9 @@ body {
 
 .Budget {
     margin: auto;
-    width: 720px;
+    width: 768px;
+    font-family:'Courier New', Courier, monospace;
+    letter-spacing: 1px;
 }
 
 .ylaosa {
@@ -52,8 +54,7 @@ body {
     background-color: white;
     border-left: 7px solid #585858;
     border-right: 7px solid #585858;
-    text-align: left;
-    font-size: 24px;
+    text-align: center;
 }
 
 .budget_header {
@@ -78,4 +79,8 @@ input:focus {
 
 label {
     font-size: 20px;
+}
+
+ul {
+    list-style-type: none;
 }

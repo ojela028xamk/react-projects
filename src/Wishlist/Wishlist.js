@@ -8,6 +8,7 @@ import MenuItem from '@material-ui/core/MenuItem';
 import Chip from '@material-ui/core/Chip';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
+import HighlightOffIcon from '@material-ui/icons/HighlightOff';
 
 function Wishlist(props) {
 
@@ -162,7 +163,7 @@ const Item = ({ item, onRemoveItem }) => (
       <Chip label={item.platform} variant="outlined" />
     </ListItemText>
     <Button type="button" onClick={() => onRemoveItem(item)} color="secondary" size="small">
-        X
+        <HighlightOffIcon />
     </Button>
   </ListItem>
 );

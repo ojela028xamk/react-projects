@@ -30,22 +30,22 @@ const AppReducer = (state, action) => {
 	}
 };
 
-
 /* 
 InitialStatella indikoidaan staten muoto eli mitä ominaisuuksia ja dataa meillä on.
 Voidaan jättää tyhjät stringit, arrayt jne. 
 */
 
-const initialState = {
-	budget: 0,
-	expenses: [],
-};
-
 export const AppContext = React.createContext(); // Context objekti
 
 // AppProvider on komponentti joka wrappaa komponentit, joihin me halutaan yhdistää state
 export const AppProvider = (props) => {
-	const [state, dispatch] = React.useReducer(AppReducer, initialState);
+
+	let storageLoad = JSON.parse(localStorage.getItem("state"))
+	
+	const [state, dispatch] = React.useReducer(AppReducer, storageLoad);
+
+	let storagestate = JSON.stringify(state);
+	localStorage.setItem("state", storagestate);
 
 	return (
 		<AppContext.Provider

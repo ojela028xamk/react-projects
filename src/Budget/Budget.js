@@ -17,10 +17,13 @@ const useStyles = makeStyles({
   },
 });
 
-function Budget(props) {
 
+
+function Budget(props) { 
+  
   return (
     <AppProvider>
+
     <div className="Budget">
 
       <br />

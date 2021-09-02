@@ -17,10 +17,12 @@ const useStyles = makeStyles({
   },
 });
 
+// localStorage.removeItem("state");
 
+function Budget(props) {
 
-function Budget(props) { 
-  
+  document.body.style.background = 'pink';
+
   return (
     <AppProvider>
 

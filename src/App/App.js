@@ -9,6 +9,8 @@ import LocalHospitalIcon from '@material-ui/icons/LocalHospital';
 
 function App() {
 
+document.body.style.background = 'white';
+
 const [sivu, asetaSivu] = React.useState("App");
 
 const handleEtusivu = function() {

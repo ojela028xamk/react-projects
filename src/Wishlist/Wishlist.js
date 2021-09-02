@@ -12,6 +12,8 @@ import HighlightOffIcon from '@material-ui/icons/HighlightOff';
 
 function Wishlist(props) {
 
+  document.body.style.background = 'linear-gradient(47deg, rgba(0,236,255,1) 0%, rgba(178,9,255,1) 100%)';
+
   const pelilista = JSON.parse(localStorage.getItem("pelilista")) || [];
 
   const useSemiPersistentState = (key, initialState) => {

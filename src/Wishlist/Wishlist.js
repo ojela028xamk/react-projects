@@ -9,10 +9,11 @@ import Chip from '@material-ui/core/Chip';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import HighlightOffIcon from '@material-ui/icons/HighlightOff';
+import pikachu from '../App/wishlist01.png';
+import space from '../App/wishlist02.png';
+import SearchIcon from '@material-ui/icons/Search';
 
 function Wishlist(props) {
-
-  document.body.style.background = 'linear-gradient(47deg, rgba(0,236,255,1) 0%, rgba(178,9,255,1) 100%)';
 
   const pelilista = JSON.parse(localStorage.getItem("pelilista")) || [];
 
@@ -88,14 +89,15 @@ function Wishlist(props) {
 
       <Button variant="outlined" type="submit" onClick={props.onClick}> {"<<"} Palaa etusivulle</Button>
 
-      <h1 className="headeri">Videogame Wishlist</h1>
+      <h1 className="headeri">Videogame Wishlist<img src={space} /></h1>
       
       <Grid container spacing={3}>
         <Grid item xs={6}>
           <div className="vasen_puoli">
+            <img src={pikachu} />
           <InputWithLabel id="search" value={searchTerm} isFocused onInputChange={handleSearch}>
             {/* h2 ja p = children. Component tagin sisällä. */}
-            <h1>Search</h1>
+            <h1>Search <SearchIcon style={{fontSize: '32px'}}/></h1>
           </InputWithLabel>
           <h1>Add a game</h1>
           <form onSubmit={handleAdd}>

@@ -21,8 +21,6 @@ const useStyles = makeStyles({
 
 function Budget(props) {
 
-  document.body.style.background = 'pink';
-
   return (
     <AppProvider>
 

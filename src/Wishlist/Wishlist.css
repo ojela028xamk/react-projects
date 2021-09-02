@@ -20,6 +20,17 @@ span { margin: 2px; }
   border: 5px solid black;
 }
 
+.vasen_puoli {
+  position: relative;
+}
+
+.vasen_puoli > img {
+  position: absolute;
+  top: -70px;
+  left: -60px;
+  transform: rotate(-25deg);
+}
+
 .oikea_puoli {
   height: 460px;
   overflow: auto;
@@ -28,6 +39,11 @@ span { margin: 2px; }
 .headeri {
   font-size: 48px;
   font-family: minunFontti;
+  position: relative;
 }
-  
+
+.headeri > img {
+  position: absolute;
+  top: -40px;
+}
   

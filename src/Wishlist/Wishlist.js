@@ -12,6 +12,7 @@ import HighlightOffIcon from '@material-ui/icons/HighlightOff';
 import pikachu from '../App/wishlist01.png';
 import space from '../App/wishlist02.png';
 import SearchIcon from '@material-ui/icons/Search';
+import { v4 as uuidv4 } from 'uuid';
 
 function Wishlist(props) {
 
@@ -51,14 +52,14 @@ function Wishlist(props) {
   const handleAdd = function(e) { // Lisää peli
 
     e.preventDefault()
-    let idnum = Math.random(); // Random objectID
 
     let uusipeli = {
       title: pelivalue.charAt(0).toUpperCase() + pelivalue.slice(1), // Iso alkukirjain
       platform: alustavalue,
-      objectID: idnum
+      objectID: uuidv4() // Random objectID
     }
 
+    console.log(uusipeli)
     if (pelivalue.length === 0) { return; }
 
     const uusilista = [...pelit, uusipeli] // Nykyinen lista + uusi peli

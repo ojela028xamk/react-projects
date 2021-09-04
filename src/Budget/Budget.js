@@ -113,9 +113,14 @@ const Budjetti = () => {
   const { budget } = useContext(AppContext);
 
   return (
-		<div>
-			<span style={{fontSize: '28px'}}><AccountBalanceIcon style={{fontSize: '28px', marginBottom: '-5px'}} /> <b>Budget <br/> {budget} €</b></span>
-		</div>
+    <>
+			<div className="tabs_ikoni">
+        <AccountBalanceIcon style={{fontSize: '32px', color: 'white'}} /> 
+      </div>
+      <div className="tabs_text">
+        <b>Budget {budget} €</b>
+      </div>  
+    </>
 	);
 
 }

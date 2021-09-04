@@ -7,6 +7,7 @@ import logo2 from './logo2.png';
 import ylabanneri from './banneri-01.png';
 import Button from '@material-ui/core/Button';
 import LocalHospitalIcon from '@material-ui/icons/LocalHospital';
+import budget_tausta from './budjetti.png';
 
 function App() {
 
@@ -22,7 +23,7 @@ React.useEffect(() => {
       document.body.style.background = 'linear-gradient(47deg, rgba(0,236,255,1) 0%, rgba(178,9,255,1) 100%)';
       break;
     case "Budget":
-      document.body.style.background = 'aliceblue';
+      document.body.style.backgroundImage = `url(${budget_tausta})`;
       break;
     default:
       document.body.style.background = 'white';

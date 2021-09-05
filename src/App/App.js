@@ -8,8 +8,9 @@ import ylabanneri from './banneri-01.png';
 import Button from '@material-ui/core/Button';
 import LocalHospitalIcon from '@material-ui/icons/LocalHospital';
 import budget_tausta from './budjetti.png';
+import HealingIcon from '@material-ui/icons/Healing';
 
-function App() {
+function App() { 
 
 const [sivu, asetaSivu] = React.useState("App");
 
@@ -17,7 +18,7 @@ const [sivu, asetaSivu] = React.useState("App");
 React.useEffect(() => { 
   switch (sivu) {
     case "App":
-      document.body.style.background = 'white';
+      document.body.style.background = '#8d99ae';
       break;
     case "Wishlist":
       document.body.style.background = 'linear-gradient(47deg, rgba(0,236,255,1) 0%, rgba(178,9,255,1) 100%)';
@@ -38,10 +39,14 @@ const handleEtusivu = function() {
     <>
 
       <div className="ylabanneri" style={{ 
-        backgroundImage: `url(${ylabanneri})`,
+        /*backgroundImage: `url(${ylabanneri})`,*/
         display: sivu === "App" ? "block" : "none"
         }} >
-
+        <div className="ylabanneri_text">
+          <h3>ReactJS Projekteja</h3>
+          <p className="header_p">Täältä löytyy kaikki React-kirjaston avulla luodut ohjelmat. 
+          Tekijä Jere Länsipii.</p>
+        </div>
       </div>
       
       <div className="index" style={{ display: sivu === "App" ? "grid" : "none" }}>
@@ -49,8 +54,9 @@ const handleEtusivu = function() {
           <div className="kortti">
             <div className="korttiKuva">
               <LocalHospitalIcon style={{ 
-                width: "150px",
-                height: "150px" }} />
+                width: "100%",
+                height: "auto",
+                color: "black" }} />
             </div> 
             <div className="korttiTeksti">
               <h2>ROKOTEDATAA</h2>
@@ -60,11 +66,11 @@ const handleEtusivu = function() {
               <Button onClick={(e) => {
                 e.preventDefault(); 
                 window.location.href='https://lansipii-vaccine-data.firebaseapp.com/';
-                }} variant="outlined" color="primary"> Avaa {">>"} </Button>
+                }} variant="outlined" color="inherit"> Avaa {">>"} </Button>
             </div>
           </div>
 
-          <div className="kortti">
+          <div className="kortti kortti-1">
             <div className="korttiKuva">
               <img className="logo" src={logo1} />
             </div> 
@@ -74,11 +80,11 @@ const handleEtusivu = function() {
                 myös suodattaa pelialustan mukaan. Pelilista tallentuu paikallisesti selaimeen.
 
               </p>
-              <Button variant="outlined" color="primary" onClick={() => asetaSivu("Wishlist")}> Avaa {">>"} </Button>
+              <Button variant="outlined" color="inherit" onClick={() => asetaSivu("Wishlist")}> Avaa {">>"} </Button>
             </div>
           </div>
 
-          <div className="kortti">
+          <div className="kortti kortti-2">
             <div className="korttiKuva">
               <img className="logo" src={logo2} />
             </div> 
@@ -88,7 +94,21 @@ const handleEtusivu = function() {
                 Ohjelma näyttää myöskin kuinka paljon budjetista on käytetty ja kuinka paljon
                 rahaa on jäljellä. Budjetti ja kululista tallentuu paikallisesti selaimeen.
               </p>
-              <Button variant="outlined" color="primary" onClick={() => asetaSivu("Budget")}> Avaa {">>"} </Button>
+              <Button variant="outlined" color="inherit" onClick={() => asetaSivu("Budget")}> Avaa {">>"} </Button>
+            </div>
+          </div>
+
+          <div className="kortti">
+            <div className="korttiKuva">
+            <HealingIcon style={{ 
+                width: "100%",
+                height: "auto",
+                color: "black" }} />
+            </div> 
+            <div className="korttiTeksti">
+              <h2>UUSI PROJEKTI</h2>
+              <p>Tulevaisuuden projekti...
+              </p>           
             </div>
           </div>
           

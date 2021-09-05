@@ -1,14 +1,19 @@
 .ylabanneri {
-    width: 100%;
-    height: 300px;
+    height: 400px;
+    background: #2b2d42;
     color: white;
+    /*background: linear-gradient(254deg, rgba(17,66,255,1) 0%, rgba(64,180,240,1) 100%);*/
+}
+
+.ylabanneri_text {
+    margin: auto;
+    max-width: 1024px;
 }
 
 .index {
-    width: 1080px;
+    max-width: 1024px;
     margin: auto;
-    margin-top: 20px;
-    background-color: rgb(238, 238, 238);
+    margin-top: -100px;
     padding: 20px;
     border-radius: 20px;
     display: grid;
@@ -18,35 +23,71 @@
 }
 
 .kortti {
+    color: #2b2d42;
+    position: relative;
     display: flex;
-    border-radius: 20px;
-    background-color: white;
+    background: white;
     padding: 20px;
-    box-shadow: 7px 7px 15px black;
+    box-shadow: 5px 5px 15px black;
+}
+
+.kortti:after {
+    content: '';
+    border-style: solid;
+    border-width: 0 100px 100px 0;
+    border-color: transparent #EDF2F4 transparent transparent;
+    right: 0;
+    top: 0;
+    position: absolute
+}
+
+.kortti-1:after {
+    border-color: transparent #F14156 transparent transparent;
+}
+
+.kortti-2:after {
+    border-color: transparent #D90429 transparent transparent;
 }
 
 .korttiKuva {
-    flex: 1;
+    flex: 2;
 }
 
 .korttiTeksti {
-    flex: 3;
+    flex: 5;
     margin-left: 10px;
 }
 
 .logo {
-    width: 150px;
-    height: 150px;
+    width: 100%;
+    height: auto;
     border-radius: 50%;
+}
+
+h3 {
+    text-align: left;
+    margin: 0px;
+    padding-top: 50px;
+    font-size: 50px;
+    font-family: 'Courier New';
+    letter-spacing: 5px;
+    font-weight: normal;
 }
 
 h2 {
     text-align: left;
+
 }
 
 p {
     font-size: 17px;
     text-align: left;
-    border-left: 5px solid black;
+    border-left: 5px solid #2b2d42;
     padding: 10px;
+}
+
+.header_p {
+    text-align: left;
+    font-size: 28px;
+    font-family: 'Courier New';
 }

@@ -54,7 +54,9 @@ const handleEtusivu = function() {
             </div> 
             <div className="korttiTeksti">
               <h2>ROKOTEDATAA</h2>
-              <p>Solita Dev Akatemian työnhakutehtävä, joka näyttää rokotedataa. </p>
+              <p>Solita Dev Akatemian työnhakutehtävä, joka näyttää rokotedataa. 
+                 Sivusto näyttää esim. rokotteiden määrän valmistajan mukaan, rokotettujen
+                 sukupuolijakauman jne.</p>
               <Button onClick={(e) => {
                 e.preventDefault(); 
                 window.location.href='https://lansipii-vaccine-data.firebaseapp.com/';

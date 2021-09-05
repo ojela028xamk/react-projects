@@ -59,7 +59,6 @@ function Wishlist(props) {
       objectID: uuidv4() // Random objectID
     }
 
-    console.log(uusipeli)
     if (pelivalue.length === 0) { return; }
 
     const uusilista = [...pelit, uusipeli] // Nykyinen lista + uusi peli

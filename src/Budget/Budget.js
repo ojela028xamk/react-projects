@@ -21,6 +21,8 @@ const useStyles = makeStyles({
 
 function Budget(props) {
 
+  const classes = useStyles();
+  
   return (
     <AppProvider>
 
@@ -28,7 +30,7 @@ function Budget(props) {
 
       <br />
 
-      <Button variant="outlined" type="submit" onClick={props.onClick}> {"<<"} Palaa etusivulle</Button>
+      <Button classes={{root: classes.root}} variant="outlined" type="submit" onClick={props.onClick}> {"<<"} Palaa etusivulle</Button>
      
       <h1 className="budget_header">BUDGET CALCULATOR</h1>
       
@@ -115,10 +117,10 @@ const Budjetti = () => {
   return (
     <>
 			<div className="tabs_ikoni">
-        <AccountBalanceIcon style={{fontSize: '32px', color: 'white'}} /> 
+        <AccountBalanceIcon style={{fontSize: '46px', color: 'white'}} /> 
       </div>
       <div className="tabs_text">
-        <b>Budget {budget} €</b>
+        <b>Budget <br />{budget} €</b>
       </div>  
     </>
 	);
@@ -134,9 +136,14 @@ const Jaljella = () => {
 	}, 0);
 
 	return (
-		<div>
-			<span style={{fontSize: '20px'}}><AttachMoneyIcon style={{marginBottom: '-5px'}}/> Remaining <br/> {budget - totalExpenses} €</span>
-		</div>
+    <>
+      <div className="tabs_ikoni">
+        <AttachMoneyIcon style={{fontSize: '46px', color: 'white'}} /> 
+      </div>
+      <div className="tabs_text">
+        <b>Remaining <br />{budget - totalExpenses} €</b>
+      </div>
+    </>
 	);
 
 }
@@ -150,9 +157,14 @@ const Kulut = () => {
 	}, 0);
 
 	return (
-		<div>
-			<span style={{fontSize: '20px'}}><MoneyOffIcon style={{marginBottom: '-5px'}}/> Money spent <br/> {totalExpenses} €</span>
-		</div>
+    <>
+      <div className="tabs_ikoni">
+          <MoneyOffIcon style={{fontSize: '46px', color: 'white'}} /> 
+      </div>
+      <div className="tabs_text">
+          <b>Money spent <br/> {totalExpenses} €</b>
+      </div>
+    </>
 	);
 
 }
@@ -186,7 +198,7 @@ const KulutItem = (props) => {
 		<li>
       <span style={{fontSize: '22px'}}> {props.name} {props.cost} € </span>
       <Button type="button" onClick={handleDeleteExpense} size="medium">
-        <DeleteForeverIcon style={{marginBottom: '5px'}}/>
+        <DeleteForeverIcon style={{marginBottom: '5px', color: 'white'}}/>
       </Button>
 		</li>
 	);

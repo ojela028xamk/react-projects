@@ -29,11 +29,8 @@ cf601b
 }
 
 .ylaosa_vasen {
-    background: white;
-    border-left: 5px solid #585858;
-    border-right: 5px solid #585858;
-    border-radius: 12px;
-    background: #585858;
+    background-color: #1A2349;
+    border-radius: 25px;
     color: white;
 }
 
@@ -45,19 +42,20 @@ cf601b
     flex: 1;
     padding: 20px;
     margin: 10px;
-    background: rgb(175,123,250);
-    background: linear-gradient(47deg, rgba(175,123,250,1) 0%, rgba(223,122,254,1) 100%);
+    background-color: #1A2349;
+    border-radius: 25px;
     color: white;
-    box-shadow: 0px 0px 50px rgb(134, 134, 134);
+    height: 350px;
 }
 
+.kulutlista {
+    overflow: auto;
+}
 
 .budget_header {
-    background: rgb(175,123,250);
-    background: linear-gradient(47deg, rgba(175,123,250,1) 0%, rgba(223,122,254,1) 100%);
     color: white;
-    padding: 20px;
-    box-shadow: 0px 0px 50px rgb(134, 134, 134);
+    font-size: 50px;
+    letter-spacing: 10px;
 }
 
 input {
@@ -85,13 +83,14 @@ ul {
 .info {
     display: flex;
     margin: 20px;
-    background-color: white;
+    background-color: #1A2349;
     text-align: center;
+    border-radius: 50px 0px 0px 50px;
 }
 
 .tabs_ikoni {
     flex: 1;
-    background-color: #3e2eae;
+    background-color: #07080d;
     padding: 20px;
     border-radius: 50px;
 }
@@ -100,4 +99,5 @@ ul {
     flex: 4;
     padding: 20px;
     font-size: 24px;
+    color: white;
 }

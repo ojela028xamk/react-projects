@@ -1,18 +1,3 @@
-/*
-AF7BFA
-DF7AFE
-F3F4F8
-585858
-*/
-
-/*
-e2dff6
-cf601b
-1a2349
-07080d
-3e2eae
-*/
-
 .Budget {
     margin: auto;
     width: 768px;
@@ -62,7 +47,6 @@ input {
     padding: 12px;
     border-radius: 8px;
     border: 1px solid white;
-    background-color: transparent;
     margin-top: 8px;
 }
 

@@ -96,12 +96,14 @@ const LisaaBudjetti = () => {
       payexp: raha,
     });
 
+    setRaha('')
+
   }
 
   return (
     <form onSubmit={onSubmit}>
       <h1>Add budget</h1>
-      <input required='required' type="text" id='raha' value={raha} onChange={(e) => setRaha(e.target.value)}></input>
+      <input required='required' type="number" id='raha' value={raha} onChange={(e) => setRaha(e.target.value)}></input>
       <br />
       <br />
       <Button classes={{root: classes.root}} variant="outlined" type="submit">Add budget</Button>
@@ -228,6 +230,9 @@ const LisaaKulu = () => {
 			payload: expense,
 		});
 
+    setNimi('')
+    setKulu('')
+
   }
 
   return (
@@ -242,7 +247,7 @@ const LisaaKulu = () => {
         <br />
         <label>Cost (€)</label>
         <br />
-        <input required='required' type="text" id='cost' value={kulu} onChange={(e) => setKulu(e.target.value)} />
+        <input required='required' type="number" id='cost' value={kulu} onChange={(e) => setKulu(e.target.value)} />
         <br />
         <br />
         <Button classes={{root: classes.root}} variant="outlined" type="submit">Add expense</Button>

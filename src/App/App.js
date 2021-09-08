@@ -4,7 +4,6 @@ import Wishlist from "../Wishlist/Wishlist";
 import Budget from "../Budget/Budget";
 import logo1 from './logo1.png';
 import logo2 from './logo2.png';
-import ylabanneri from './banneri-01.png';
 import Button from '@material-ui/core/Button';
 import LocalHospitalIcon from '@material-ui/icons/LocalHospital';
 import budget_tausta from './budjetti.png';
@@ -39,7 +38,6 @@ const handleEtusivu = function() {
     <>
 
       <div className="ylabanneri" style={{ 
-        /*backgroundImage: `url(${ylabanneri})`,*/
         display: sivu === "App" ? "block" : "none"
         }} >
         <div className="ylabanneri_text">

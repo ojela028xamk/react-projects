@@ -66,6 +66,7 @@ function Wishlist(props) {
     setPelit(uusilista) // Update pelilista
     let storagepelit2 = JSON.stringify(uusilista);
     localStorage.setItem("pelilista", storagepelit2);
+    setPelivalue('')
 
   }
 
@@ -101,7 +102,7 @@ function Wishlist(props) {
           </InputWithLabel>
           <h1>Add a game</h1>
           <form onSubmit={handleAdd}>
-            <TextField id="standard-basic" label="Game title" onChange={(e) => { setPelivalue(e.target.value); } }/>
+            <TextField value={pelivalue} id="standard-basic" label="Game title" required='required' onChange={(e) => { setPelivalue(e.target.value); } }/>
             <br />
             <label>Platform: </label>
             <Select defaultValue="Switch" onChange={(e) => { setAlustavalue(e.target.value); } }>

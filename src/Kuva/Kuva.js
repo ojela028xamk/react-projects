@@ -7,65 +7,81 @@ import ImageUploading from "react-images-uploading";
 function Kuva(props) {
 
   const [images, setImages] = React.useState([]);
-  const maxNumber = 69;
-  const onChange = (imageList, addUpdateIndex) => {
-    // data for submit
-    console.log(imageList, addUpdateIndex);
+  const [nappula, setNappula] = React.useState("naytaUpload");
+  const maxNumber = 1;
+
+  const onChange = (imageList) => {
+    
     setImages(imageList);
+    setNappula("piilotaUpload")
+
   };
 
   return (
-
+    
     <div className="Kuva">
 
       <br />
 
       <Button variant="outlined" type="submit" onClick={props.onClick}> {"<<"} Palaa etusivulle</Button>
 
-      <ImageUploading
-        multiple
-        value={images}
-        onChange={onChange}
-        maxNumber={maxNumber}
-        dataURLKey="data_url"
-      >
-        {({
-          imageList,
-          onImageUpload,
-          onImageRemoveAll,
-          onImageUpdate,
-          onImageRemove,
-          isDragging,
-          dragProps
-        }) => (
-          // write your building UI
-          <div className="upload__image-wrapper">
-            <button
-              style={isDragging ? { color: "red" } : null}
-              onClick={onImageUpload}
-              {...dragProps}
-            >
-              Click or Drop here
-            </button>
+      <ImageUploading multiple value={images} onChange={onChange} maxNumber={maxNumber} dataURLKey="data_url">
+      {({ imageList, onImageUpload, onImageUpdate, isDragging, dragProps }) => (
+      <>
+          <div>
+
+            {/* Upload kuva ensimmäistä kertaa */}
+            <button style={isDragging ? { color: 'red' } : undefined} onClick={onImageUpload} {...dragProps}
+            style={{ 
+              display: nappula === "naytaUpload" ? "block" : "none" // Piilota ekan uploadin jälkeen
+              }}> Lisää kuva... </button>
+
             &nbsp;
-            <button onClick={onImageRemoveAll}>Remove all images</button>
+
             {imageList.map((image, index) => (
-              <div key={index} className="image-item">
-                <img src={image.data_url} alt="" width="100" />
-                <div className="image-item__btn-wrapper">
-                  <button onClick={() => onImageUpdate(index)}>Update</button>
-                  <button onClick={() => onImageRemove(index)}>Remove</button>
+              <div key={index}>
+                <img src={image['data_url']} alt="" width="150" />
+                <div>
+                  <button onClick={() => onImageUpdate(index)}>Lataa uusi kuva...</button> {/* Näytä ekan uploadin jälkeen */}
                 </div>
               </div>
             ))}
+
           </div>
-        )}
+                      
+          <EfektiLista lista={imageList}/>
+
+      </>
+      )}
       </ImageUploading>
+
     </div>
 
   );
   
 }
+
+
+const EfektiLista = (props) => {
+
+
+  return (
+  <div className="efektiLista">
+    {props.lista.map((image, index) => (
+      <div key={index}>
+        <img src={image['data_url']} alt="" width="150" />
+        <img src={image['data_url']} alt="" width="150" />
+        <img src={image['data_url']} alt="" width="150" />
+        <img src={image['data_url']} alt="" width="150" />
+        <img src={image['data_url']} alt="" width="150" />
+        
+      </div>
+      
+    ))}
+  </div>
+  )
+}
+
 
 
 export default Kuva;

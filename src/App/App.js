@@ -8,7 +8,7 @@ import logo2 from './logo2.png';
 import Button from '@material-ui/core/Button';
 import LocalHospitalIcon from '@material-ui/icons/LocalHospital';
 import budget_tausta from './budjetti.png';
-import HealingIcon from '@material-ui/icons/Healing';
+import ImageIcon from '@material-ui/icons/Image';
 
 function App() { 
 
@@ -99,7 +99,7 @@ const handleEtusivu = function() {
 
           <div className="kortti">
             <div className="korttiKuva">
-            <HealingIcon style={{ 
+            <ImageIcon style={{ 
                 width: "100%",
                 height: "auto",
                 color: "black" }} />

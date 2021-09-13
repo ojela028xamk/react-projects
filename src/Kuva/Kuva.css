@@ -4,3 +4,16 @@
     border: 2px solid black;
     min-height: 300px;
 }
+
+.Kuva img {
+    cursor: pointer;
+    margin: 10px;
+}
+
+.grayscale {
+    filter: grayscale(100%);
+}
+
+.invert {
+    filter: invert(100%);
+}

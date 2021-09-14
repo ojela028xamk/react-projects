@@ -105,10 +105,10 @@ const handleEtusivu = function() {
                 color: "black" }} />
             </div> 
             <div className="korttiTeksti">
-              <h2>KUVAN MUOKKAUS</h2>
-              <p>Tällä ohjelmalla voidaan muokata kuvaa esim. muuttaa kuva mustavalkoiseksi.
+              <h2>Projekti</h2>
+              <p>Tulevaisuuden projekti...
               </p>
-              <Button variant="outlined" color="inherit" onClick={() => asetaSivu("Kuva")}> Avaa {">>"} </Button>
+              {/*<Button variant="outlined" color="inherit" onClick={() => asetaSivu("Kuva")}> Avaa {">>"} </Button>*/}
             </div>
           </div>
           

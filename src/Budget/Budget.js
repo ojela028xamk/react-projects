@@ -142,7 +142,7 @@ const Jaljella = () => {
       <div className="tabs_ikoni">
         <AttachMoneyIcon style={{fontSize: '46px', color: 'white'}} /> 
       </div>
-      <div className="tabs_text">
+      <div className="tabs_text" style={{ color: budget - totalExpenses < 0 ? 'red' : 'white'}}>
         <b>Remaining <br />{budget - totalExpenses} €</b>
       </div>
     </>

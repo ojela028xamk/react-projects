@@ -32,7 +32,7 @@ function Budget(props) {
 
       <Button classes={{root: classes.root}} variant="outlined" type="submit" onClick={props.onClick}> {"<<"} Palaa etusivulle</Button>
      
-      <h1 className="budget_header">BUDGET CALCULATOR</h1>
+      <h1 className="budget_header">Budjettilaskuri</h1>
       
       <div className="ylaosa">
 
@@ -67,7 +67,7 @@ function Budget(props) {
         </div>
 
         <div className="kulutlista">
-          <h1>Expenses</h1>
+          <h1>Kulut lista</h1>
           <KulutLista />
         </div>
         
@@ -102,11 +102,11 @@ const LisaaBudjetti = () => {
 
   return (
     <form onSubmit={onSubmit}>
-      <h1>Add budget</h1>
+      <h1>Lisää budjetti</h1>
       <input required='required' type="number" id='raha' value={raha} onChange={(e) => setRaha(e.target.value)}></input>
       <br />
       <br />
-      <Button classes={{root: classes.root}} variant="outlined" type="submit">Add budget</Button>
+      <Button classes={{root: classes.root}} variant="outlined" type="submit">Lisää budjetti</Button>
     </form>
   );
 
@@ -122,7 +122,7 @@ const Budjetti = () => {
         <AccountBalanceIcon style={{fontSize: '46px', color: 'white'}} /> 
       </div>
       <div className="tabs_text">
-        <b>Budget <br />{budget} €</b>
+        <b>Budjetti <br />{budget} €</b>
       </div>  
     </>
 	);
@@ -143,7 +143,7 @@ const Jaljella = () => {
         <AttachMoneyIcon style={{fontSize: '46px', color: 'white'}} /> 
       </div>
       <div className="tabs_text" style={{ color: budget - totalExpenses < 0 ? 'red' : 'white'}}>
-        <b>Remaining <br />{budget - totalExpenses} €</b>
+        <b>Jäljellä <br />{budget - totalExpenses} €</b>
       </div>
     </>
 	);
@@ -164,7 +164,7 @@ const Kulut = () => {
           <MoneyOffIcon style={{fontSize: '46px', color: 'white'}} /> 
       </div>
       <div className="tabs_text">
-          <b>Money spent <br/> {totalExpenses} €</b>
+          <b>Käytetty <br/> {totalExpenses} €</b>
       </div>
     </>
 	);
@@ -237,20 +237,20 @@ const LisaaKulu = () => {
 
   return (
     <>
-      <h1>Add expense</h1>
+      <h1>Lisää kulu</h1>
       <form onSubmit={onSubmit}>
 
-        <label>Item</label>
+        <label>Kulu</label>
         <br />
         <input required='required' type="text" id='name' value={nimi} onChange={(e) => setNimi(e.target.value)} />
         <br />
         <br />
-        <label>Cost (€)</label>
+        <label>Hinta (€)</label>
         <br />
         <input required='required' type="number" id='cost' value={kulu} onChange={(e) => setKulu(e.target.value)} />
         <br />
         <br />
-        <Button classes={{root: classes.root}} variant="outlined" type="submit">Add expense</Button>
+        <Button classes={{root: classes.root}} variant="outlined" type="submit">Lisää kulu</Button>
 
       </form>
     </>

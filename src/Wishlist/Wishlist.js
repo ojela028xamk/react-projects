@@ -90,7 +90,7 @@ function Wishlist(props) {
 
       <Button variant="outlined" type="submit" onClick={props.onClick}> {"<<"} Palaa etusivulle</Button>
 
-      <h1 className="headeri">Videogame Wishlist<img src={space} /></h1>
+      <h1 className="headeri">Videopelien Toivelista<img src={space} /></h1>
       
       <Grid container spacing={3}>
         <Grid item xs={6}>
@@ -98,20 +98,20 @@ function Wishlist(props) {
             <img src={pikachu} />
           <InputWithLabel id="search" value={searchTerm} isFocused onInputChange={handleSearch}>
             {/* h2 ja p = children. Component tagin sisällä. */}
-            <h1>Search <SearchIcon style={{fontSize: '32px'}}/></h1>
+            <h1>Haku <SearchIcon style={{fontSize: '32px'}}/></h1>
           </InputWithLabel>
-          <h1>Add a game</h1>
+          <h1>Lisää peli</h1>
           <form onSubmit={handleAdd}>
             <TextField value={pelivalue} id="standard-basic" label="Game title" required='required' onChange={(e) => { setPelivalue(e.target.value); } }/>
             <br />
-            <label>Platform: </label>
+            <label>Alusta: </label>
             <Select defaultValue="Switch" onChange={(e) => { setAlustavalue(e.target.value); } }>
               <MenuItem value="Switch">Switch</MenuItem>
               <MenuItem value="PC">PC</MenuItem>
               <MenuItem value="PS5">PS5</MenuItem>
               <MenuItem value="PS4">PS4</MenuItem>
               <MenuItem value="Xbox">Xbox</MenuItem>
-              <MenuItem value="Other">Other</MenuItem>
+              <MenuItem value="Other">Muu</MenuItem>
             </Select>
             <hr />
             <Button variant="outlined" color="primary" type="submit"> Add </Button>
@@ -121,16 +121,16 @@ function Wishlist(props) {
 
         <Grid item xs={6}>
           <div className="oikea_puoli">
-          <h1>Your Wishlist</h1>
-          <label>Platform: </label>
+          <h1>Sinun toivelista</h1>
+          <label>Alusta: </label>
           <Select defaultValue="All" onChange={(e) => { setAlustafilter(e.target.value); } }>
-            <MenuItem value="All">All</MenuItem>
+            <MenuItem value="All">Kaikki</MenuItem>
             <MenuItem value="Switch">Switch</MenuItem>
             <MenuItem value="PC">PC</MenuItem>
             <MenuItem value="PS5">PS5</MenuItem>
             <MenuItem value="PS4">PS4</MenuItem>
             <MenuItem value="Xbox">Xbox</MenuItem>
-            <MenuItem value="Other">Other</MenuItem>
+            <MenuItem value="Other">Muu</MenuItem>
           </Select>
           <hr />
           <List list={filterPelilista} onRemoveItem={handleRemovePeli} /> {/* Instance of React Component */}

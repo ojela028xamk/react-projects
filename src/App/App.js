@@ -2,7 +2,7 @@ import './App.css';
 import React from 'react';
 import Wishlist from "../Wishlist/Wishlist";
 import Budget from "../Budget/Budget";
-import Kuva from "../Kuva/Kuva"
+import Gymsport from "../Gymsport/Gymsport"
 import logo1 from './logo1.png';
 import logo2 from './logo2.png';
 import Button from '@material-ui/core/Button';
@@ -108,7 +108,7 @@ const handleEtusivu = function() {
               <h2>Projekti</h2>
               <p>Tulevaisuuden projekti...
               </p>
-              {/*<Button variant="outlined" color="inherit" onClick={() => asetaSivu("Kuva")}> Avaa {">>"} </Button>*/}
+              {/*<Button variant="outlined" color="inherit" onClick={() => asetaSivu("Gymsport")}> Avaa {">>"} </Button>*/}
             </div>
           </div>
           
@@ -117,7 +117,7 @@ const handleEtusivu = function() {
       <div>
         {sivu === "Wishlist" && <Wishlist onClick={handleEtusivu}/>}
         {sivu === "Budget" && <Budget onClick={handleEtusivu}/>}
-        {sivu === "Kuva" && <Kuva onClick={handleEtusivu}/>}
+        {sivu === "Gymsport" && <Gymsport onClick={handleEtusivu}/>}
       </div>
 
     </>

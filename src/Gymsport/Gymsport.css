@@ -4,3 +4,32 @@
     height: 500px;
     border: 5px double burlywood;
 }
+
+.gymsport_flex {
+    display: flex;
+    margin: 20px;
+}
+
+.gymsport_category {
+    flex: 1;
+    border: 2px solid black;
+}
+
+.gymsport_list {
+    flex: 2;
+    border: 2px solid black;
+}
+
+.gymsport_nappi {
+  background-color: #2561e4; 
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+
+}

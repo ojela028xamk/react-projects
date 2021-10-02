@@ -108,7 +108,7 @@ const handleEtusivu = function() {
               <h2>Projekti</h2>
               <p>Tulevaisuuden projekti...
               </p>
-              {/*<Button variant="outlined" color="inherit" onClick={() => asetaSivu("Gymsport")}> Avaa {">>"} </Button>*/}
+              <Button variant="outlined" color="inherit" onClick={() => asetaSivu("Gymsport")}> Avaa {">>"} </Button>
             </div>
           </div>
           

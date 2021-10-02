@@ -18,6 +18,15 @@ const liikkeet = [
 
 function Gymsport(props) {
 
+  const [category, asetaCategory] = React.useState("Liikkeet")
+
+  const filterLiikkeet = liikkeet.filter(function(liike) {
+    if (category === "Liikkeet") {
+      return liikkeet;
+    } else {
+      return liike.target.includes(category);
+    }
+  });
 
   return (
     
@@ -28,8 +37,20 @@ function Gymsport(props) {
       <Button variant="outlined" type="submit" onClick={props.onClick}> {"<<"} Palaa etusivulle</Button>
 
 
-      <GymLista gymlista={liikkeet} />
+      
+      <div className="gymsport_flex">
 
+          <div className="gymsport_category">
+            <button className="gymsport_nappi" onClick={() => asetaCategory("Liikkeet")}> Kaikki liikkeet </button>
+            <button className="gymsport_nappi" onClick={() => asetaCategory("Bicep")}> Bicep </button>
+            <button className="gymsport_nappi" onClick={() => asetaCategory("Chest")}> Chest </button>
+          </div>
+
+          <div className="gymsport_list">
+            <GymLista gymlista={filterLiikkeet} />
+          </div>
+
+      </div>
 
     </div>
     

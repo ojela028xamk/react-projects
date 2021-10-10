@@ -8,11 +8,7 @@
 .gymsport_flex {
     display: flex;
     margin: 20px;
-}
-
-.gymsport_flex2 {
-    display: flex;
-    margin: 20px;
+    column-gap: 10px;
 }
 
 .gymsport_category {
@@ -21,17 +17,12 @@
 }
 
 .gymsport_list {
-    flex: 2;
-    border: 2px solid black;
-}
-
-.gymsport_program {
     flex: 1;
     border: 2px solid black;
 }
 
 .gymsport_selection {
-    flex: 2;
+    flex: 1;
     border: 2px solid black;
 }
 

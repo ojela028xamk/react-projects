@@ -1,0 +1,25 @@
+.Rssnews {
+    width: 1024px;
+    margin: auto;
+}
+
+.rssUutinen > p {
+    font-size: 20px;
+}
+
+.rssUutinen > h1 {
+    font-size: 30px;
+    background: dimgrey;
+    color: white;
+    margin: 0px;
+    padding: 5px;
+}
+
+aside {
+    display: none;
+}
+
+figure {
+    display: none;
+}
+

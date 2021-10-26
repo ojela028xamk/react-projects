@@ -35,7 +35,7 @@
     content: '';
     border-style: solid;
     border-width: 0 100px 100px 0;
-    border-color: transparent #EDF2F4 transparent transparent;
+    border-color: transparent #cfcfcf transparent transparent;
     right: 0;
     top: 0;
     position: absolute
@@ -64,7 +64,7 @@
     border-radius: 50%;
 }
 
-h3 {
+.ylabanneri_text > h3 {
     text-align: left;
     margin: 0px;
     padding-top: 50px;
@@ -74,12 +74,12 @@ h3 {
     font-weight: normal;
 }
 
-h2 {
+.korttiTeksti > h2 {
     text-align: left;
 
 }
 
-p {
+.korttiTeksti > p {
     font-size: 17px;
     text-align: left;
     border-left: 5px solid #2b2d42;

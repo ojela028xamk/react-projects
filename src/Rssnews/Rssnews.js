@@ -21,7 +21,7 @@ function Rssnews(props) {
 
   React.useEffect(() => {
 
-    /*fetch("https://react-projects-servers.herokuapp.com/rss-server")*/
+    /* fetch("https://react-projects-servers.herokuapp.com/rss-server") */
 
     fetch("http://localhost:3001/rss-server") // NodeJS servu, jossa RSS-feedit käsitellään
       .then((res) => res.json())
@@ -49,9 +49,11 @@ function Rssnews(props) {
       
       <Button variant="outlined" type="submit" onClick={props.onClick}> {"<<"} Palaa etusivulle</Button>
 
+      <h1>Uutissivusto</h1>
+
         <div className="rssArtikkeli" style={{ display: showArticle ? 'block' : 'none' }}>
           <div className="rssArtikkeliContent">
-            <button onClick={() => setShowArticle(false)}>Sulje ikkuna</button>
+            <button onClick={() => setShowArticle(false)} className="rssSuljeNappi">Sulje ikkuna</button>
 
             <h1>{parseArticle.parseotsikko}</h1>
             <p>{parseArticle.parseartikkeli}</p>
@@ -59,7 +61,7 @@ function Rssnews(props) {
           </div>
         </div>
 
-        <div className="rssUutiset">
+        <div>
           {!data ? <CircularProgress color="secondary" /> : <ListaaData list={data[0]} uutinenNappi={AvaaUutinen} />}
         </div>
 
@@ -78,19 +80,22 @@ const ListaaData = (props) => {
   })
 
   return (
-		<div>
+    <>
+    <button onClick={() => setRssFilter('Yle')} className="filterNappiYle" />
+    <button onClick={() => setRssFilter('Iltalehti')} className="filterNappiIL" />
 
-      <button onClick={() => setRssFilter('Yle')}>YLE</button>
-      <button onClick={() => setRssFilter('Iltalehti')}>ILTALEHTI</button>
+
+		<div className="rssUutiset">
 
 			{filterData.map((item) => (      
         <div className="rssUutinen">
           <h1>{item.otsikko}</h1>
-          <button onClick={() => props.uutinenNappi(item)}> Avaa uutinen </button>
+          <button onClick={() => props.uutinenNappi(item)} className="rssNappi"> Avaa uutinen </button>
         </div>
 			))}
 
 		</div>
+    </>
   );
 
 }

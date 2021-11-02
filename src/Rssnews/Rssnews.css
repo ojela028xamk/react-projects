@@ -9,18 +9,25 @@
     padding-bottom: 20px;
 }
 
+.rssFlex {
+    display: flex;
+}
+
 .rssUutiset {
     margin-top: 20px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    row-gap: 15px;
-    column-gap: 15px;
+    text-align: left;
+    flex: 2;
+}
+
+.rssNapit {
+    flex: 1;
 }
 
 .rssUutinen {
-    position: relative;
-    height: 200px;
+    height: auto;
     border: 1px solid rgb(75, 75, 75);
+    padding: 15px;
+    margin: 10px;
 }
 
 .Rssnews > h1 {
@@ -32,53 +39,26 @@
 
 .rssUutinen > p {
     font-size: 20px;
+    padding: 5px;
+    font-family: "Times New Roman";
 }
 
 .rssUutinen > h1 {
     font-size: 24px;
     font-family: "Times New Roman";
     color: black;
-    margin: 0px;
-    padding: 5px;
-    margin: 10px;
+
 }
 
-aside {
-    display: none;
+.rssUutinen > a {
+    text-decoration: none;
 }
 
-figure {
-    display: none;
-}
 
-/* The Modal (background) */
-.rssArtikkeli {
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    padding-top: 20px; /* Location of the box */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(44,44,44); /* Fallback color */
+/* Napit */
 
-    
-}
-  
-/* Modal Content */
-.rssArtikkeliContent {
-    background-color: #fefefe;
-    margin: auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 60%;
-    margin-bottom: 50px;
-}
-
-/* Nappi */
-
-.rssNappi {
+.avaanewsNappi {
+    display: block;
     background: rgb(44, 44, 44);
     color: white;
     border: 2px solid rgb(44, 44, 44);
@@ -87,50 +67,14 @@ figure {
 	padding: 10px;
     font-size: 25px;
 	cursor: pointer;
-	outline: inherit;
-    position: absolute;
     bottom: 10px;
     left: 160px;
 }
 
-.rssNappi:hover {
+.avaanewsNappi:hover { 
     background: white;
     color: black;  
 }
 
-.rssSuljeNappi {
-    background: rgb(44, 44, 44);
-    color: white;
-    border: 2px solid rgb(44, 44, 44);
-    font-family: 'Monospace';
-    letter-spacing: 2px;
-	padding: 10px;
-    font-size: 25px;
-	cursor: pointer;
-}
 
-.rssSuljeNappi:hover {
-    background: white;
-    color: black;  
-}
-
-.filterNappiIL {
-    background: url(../App/iltalehti_logo.png) no-repeat;
-    cursor: pointer;
-    border: none;
-    height: 100px;
-    width: 328px;
-}
-
-.filterNappiIL:hover { opacity: 0.6; }
-
-.filterNappiYle {
-    background: url(../App/yle_logo.png) no-repeat;
-    cursor: pointer;
-    border: none;
-    height: 100px;
-    width: 266px;
-}
-
-.filterNappiYle:hover { opacity: 0.6; }
 

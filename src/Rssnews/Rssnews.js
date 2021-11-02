@@ -1,23 +1,12 @@
 import './Rssnews.css';
 import React from 'react';
 import Button from '@material-ui/core/Button';
-import ReactHtmlParser, { processNodes, convertNodeToElement, htmlparser2 } from 'react-html-parser';
 import CircularProgress from '@material-ui/core/CircularProgress';
 
 
 function Rssnews(props) {
 
   const [data, setData] = React.useState(null);
-  const [showArticle, setShowArticle] = React.useState(false)
-
-  // objekti useState
-  const [parseArticle, setParseArticle] = React.useState(
-    {
-      parseotsikko: null,
-      parseartikkeli: null,
-      parselinkki: null  
-    })
-
 
   React.useEffect(() => {
 
@@ -29,21 +18,11 @@ function Rssnews(props) {
 
   }, []);
 
-  const AvaaUutinen = (item) => {
-
-    setShowArticle(true)
-
-    setParseArticle({
-      parseotsikko: item.otsikko,
-      parseartikkeli: ReactHtmlParser(item.artikkeli),
-      parselinkki: item.linkki  
-    })
-
-  }
 
   return (
     
     <div className="Rssnews">
+
 
       <br />
       
@@ -51,19 +30,9 @@ function Rssnews(props) {
 
       <h1>Uutissivusto</h1>
 
-        <div className="rssArtikkeli" style={{ display: showArticle ? 'block' : 'none' }}>
-          <div className="rssArtikkeliContent">
-            <button onClick={() => setShowArticle(false)} className="rssSuljeNappi">Sulje ikkuna</button>
-
-            <h1>{parseArticle.parseotsikko}</h1>
-            <p>{parseArticle.parseartikkeli}</p>
-            {parseArticle.parselinkki === undefined ? null : <a href={parseArticle.parselinkki} target="_blank">Avaa uutinen</a> }
-          </div>
-        </div>
-
-        <div>
-          {!data ? <CircularProgress color="secondary" /> : <ListaaData list={data[0]} uutinenNappi={AvaaUutinen} />}
-        </div>
+      <div className="rssFlex">
+        {!data ? <CircularProgress color="secondary" /> : <ListaaData list={data[0]} />}
+      </div>
 
     </div>
     
@@ -81,16 +50,20 @@ const ListaaData = (props) => {
 
   return (
     <>
-    <button onClick={() => setRssFilter('Yle')} className="filterNappiYle" />
-    <button onClick={() => setRssFilter('Iltalehti')} className="filterNappiIL" />
-
+    <div className="rssNapit">
+      <button onClick={() => setRssFilter('Yle')} className="filterNappi">Yle</button>
+      <button onClick={() => setRssFilter('Iltalehti')} className="filterNappi">Iltalehti</button>
+      <button onClick={() => setRssFilter('Iltasanomat')} className="filterNappi">Iltasanomat</button>
+      <button onClick={() => setRssFilter('Kauppalehti')} className="filterNappi">Kauppalehti</button>
+    </div>
 
 		<div className="rssUutiset">
 
 			{filterData.map((item) => (      
         <div className="rssUutinen">
           <h1>{item.otsikko}</h1>
-          <button onClick={() => props.uutinenNappi(item)} className="rssNappi"> Avaa uutinen </button>
+          <p>{item.artikkeli}</p>
+          <a href={item.linkki} target="_blank"><button className="avaanewsNappi"> Avaa uutinen </button></a>
         </div>
 			))}
 

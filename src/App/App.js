@@ -8,7 +8,7 @@ import logo2 from './logo2.png';
 import Button from '@material-ui/core/Button';
 import LocalHospitalIcon from '@material-ui/icons/LocalHospital';
 import budget_tausta from './budjetti.png';
-import ImageIcon from '@material-ui/icons/Image';
+import RssFeedIcon from '@material-ui/icons/RssFeed';
 
 function App() { 
 
@@ -99,14 +99,16 @@ const handleEtusivu = function() {
 
           <div className="kortti">
             <div className="korttiKuva">
-            <ImageIcon style={{ 
+            <RssFeedIcon style={{ 
                 width: "100%",
                 height: "auto",
                 color: "black" }} />
             </div> 
             <div className="korttiTeksti">
-              <h2>Projekti</h2>
-              <p>Tulevaisuuden projekti...
+              <h2>RSS UUTISET</h2>
+              <p>Tämä ohjelma yksinkertaistaa uutisten lukemisen. Se näyttää pääuutiset / tuoreimmat uutiset
+                erilaisista suomalaisista uutissivustoista. Herokusta löytyy NodeJS backend, joka käsittelee
+                uutissivustojen RSS-linkit ja lähettää uutiset tähän sivustoon. 
               </p>
               <Button variant="outlined" color="inherit" onClick={() => asetaSivu("Rssnews")}> Avaa {">>"} </Button>
             </div>

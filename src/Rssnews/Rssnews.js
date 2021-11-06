@@ -10,12 +10,12 @@ function Rssnews(props) {
 
   React.useEffect(() => {
 
-    /* fetch("https://react-projects-servers.herokuapp.com/rss-server") */
-
-    fetch("http://localhost:3001/rss-server") // NodeJS servu, jossa RSS-feedit käsitellään
+    setTimeout(() => {
+      fetch("https://react-projects-servers.herokuapp.com/rss-server") // NodeJS servu, jossa RSS-feedit käsitellään
       .then((res) => res.json())
       .then((data) => setData(data));
-
+    }, 1000)
+   
   }, []);
 
 
@@ -23,16 +23,14 @@ function Rssnews(props) {
     
     <div className="Rssnews">
 
-
       <br />
       
       <Button variant="outlined" type="submit" onClick={props.onClick}> {"<<"} Palaa etusivulle</Button>
 
-      <h1>Uutissivusto</h1>
+      <br />
+      <br />
 
-      <div className="rssFlex">
         {!data ? <CircularProgress color="secondary" /> : <ListaaData list={data[0]} />}
-      </div>
 
     </div>
     
@@ -51,14 +49,16 @@ const ListaaData = (props) => {
   return (
     <>
     <div className="rssNapit">
-      <button onClick={() => setRssFilter('Yle')} className="filterNappi">Yle</button>
-      <button onClick={() => setRssFilter('Iltalehti')} className="filterNappi">Iltalehti</button>
-      <button onClick={() => setRssFilter('Iltasanomat')} className="filterNappi">Iltasanomat</button>
-      <button onClick={() => setRssFilter('Kauppalehti')} className="filterNappi">Kauppalehti</button>
+      <h1>Uutissivusto</h1>
+
+      <button onClick={() => setRssFilter('Yle')} className="filterNappi">YLE</button>
+      <button onClick={() => setRssFilter('Iltalehti')} className="filterNappi">ILTALEHTI</button>
+      <button onClick={() => setRssFilter('Iltasanomat')} className="filterNappi">ILTA-SANOMAT</button>
+      <button onClick={() => setRssFilter('Kauppalehti')} className="filterNappi">KAUPPALEHTI</button>
     </div>
-
+    <h2>Näytetään: {rssFilter}</h2>
 		<div className="rssUutiset">
-
+     
 			{filterData.map((item) => (      
         <div className="rssUutinen">
           <h1>{item.otsikko}</h1>

@@ -9,31 +9,28 @@
     padding-bottom: 20px;
 }
 
-.rssFlex {
-    display: flex;
-}
-
 .rssUutiset {
     margin-top: 20px;
     text-align: left;
-    flex: 2;
-}
-
-.rssNapit {
-    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 10px;
+    row-gap: 10px;
 }
 
 .rssUutinen {
     height: auto;
     border: 1px solid rgb(75, 75, 75);
     padding: 15px;
-    margin: 10px;
 }
 
-.Rssnews > h1 {
+
+/* Otsikot ja teksti */
+
+.rssNapit > h1 {
     font-family: minunFontti2;
     font-size: 100px;
-    margin: 10px;
+    margin: 0px;
     letter-spacing: 10px;
 }
 
@@ -52,6 +49,14 @@
 
 .rssUutinen > a {
     text-decoration: none;
+}
+
+.Rssnews > h2 {
+    color: black;
+    margin: 0px;
+    font-family: "Times New Roman";
+    font-size: 30px;
+    letter-spacing: 1px;
 }
 
 
@@ -74,6 +79,24 @@
 .avaanewsNappi:hover { 
     background: white;
     color: black;  
+}
+
+.filterNappi {
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 10px;
+    margin: 10px;
+    font-size: 26px;
+    font-family: "Times New Roman";
+    letter-spacing: 5px;
+    cursor: pointer;
+    outline: inherit;
+}
+
+.filterNappi:hover {
+    color: white;
+    background:rgb(44, 44, 44);
 }
 
 

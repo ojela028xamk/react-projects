@@ -7,7 +7,7 @@ import logo1 from './logo1.png';
 import logo2 from './logo2.png';
 import Button from '@material-ui/core/Button';
 import LocalHospitalIcon from '@material-ui/icons/LocalHospital';
-import budget_tausta from './budjetti.png';
+import budget_tausta from './money_pattern2.png';
 import RssFeedIcon from '@material-ui/icons/RssFeed';
 
 function App() { 
